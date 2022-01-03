@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         bitmap = mRetriever.getFrameAtIndex(frame_index);
         if(latency[frame_index/mFrameRate]!=-1) return;
         cropped_bitmap = Bitmap.createBitmap(bitmap,2300,300,100,50);
+        //for cod static coordinates since resolution is 2400x1080
         InputImage image = InputImage.fromBitmap(cropped_bitmap,0);
         recognizer.process(image).addOnSuccessListener(new OnSuccessListener<Text>() {
             @Override
